@@ -42,21 +42,6 @@ public class Hamilton {
      * @param path
      */
     private void enumerateSub(Node v, List<Node> path) {
-        List<Arc> arcs = g.getArcs(v);
-        if (arcs != null) {
-            for (Arc a : arcs) {
-                Node w = a.getAnotherEnd(v);
-                if (w == start && path.size() == N) {
-                    curcuitList.add(path);
-                } else {
-                    if (!path.contains(w)) {
-                        List<Node> newPath = Utils.createList();
-                        newPath.addAll(path);
-                        newPath.add(w);
-                        enumerateSub(w, newPath);
-                    }
-                }
-            }
-        }
+
     }
 }
